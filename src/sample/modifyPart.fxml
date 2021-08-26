@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="524.0" prefWidth="507.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.modifyPartController">
+    <children>
+        <GridPane layoutX="25.0" layoutY="25.0" prefHeight="493.0" prefWidth="391.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label alignment="TOP_LEFT" text="Modify Part" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></Label>
+                <Label text="ID" GridPane.rowIndex="1" />
+                <Label text="Name" GridPane.rowIndex="2" />
+                <Label text="Inv" GridPane.rowIndex="3" />
+                <Label text="Price/Cost" GridPane.rowIndex="4" />
+                <Label text="Max" GridPane.rowIndex="5" />
+                <Label fx:id="modifyMachineIDLabel" text="Machine ID" GridPane.rowIndex="6" />
+                <TextField fx:id="modifyPartIDField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="modifyPartNameField" layoutX="141.0" layoutY="91.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="modifyPartStockField" layoutX="141.0" layoutY="153.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="modifyPartPriceField" layoutX="141.0" layoutY="215.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="modifyPartMaxField" layoutX="141.0" layoutY="277.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Label layoutX="141.0" layoutY="403.0" text="Min" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <TextField fx:id="modifyPartMinField" layoutX="107.0" layoutY="338.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                <TextField fx:id="modifyPartMachineIDField" layoutX="107.0" layoutY="91.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <RadioButton fx:id="inHouseModifyPart" mnemonicParsing="false" onAction="#onModifyInHouse" selected="true" text="In-House" GridPane.columnIndex="1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="modifyPartToggle" />
+               </toggleGroup></RadioButton>
+                <RadioButton fx:id="outsourcedModifyPart" layoutX="107.0" layoutY="33.0" mnemonicParsing="false" onAction="#onModifyOutsourced" text="Outsourced" toggleGroup="$modifyPartToggle" GridPane.columnIndex="2" />
+                <Button fx:id="partModifySaveButton" mnemonicParsing="false" onAction="#onModifyPartSave" text="Save" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                <Button fx:id="modifyPartCancel" mnemonicParsing="false" onAction="#onModifyPartCancel" text="Cancel" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            </children>
+        </GridPane>
+      <GridPane layoutX="281.0" layoutY="60.0" prefHeight="261.0" prefWidth="235.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="stockErrorLabel" prefHeight="17.0" prefWidth="246.0" GridPane.rowIndex="1" />
+            <Label fx:id="maxErrorLabel" prefHeight="17.0" prefWidth="239.0" GridPane.rowIndex="2" />
+            <Label fx:id="machineIDErrorLabel" prefHeight="17.0" prefWidth="238.0" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+    </children>
+</AnchorPane>
